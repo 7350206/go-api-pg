@@ -3,11 +3,28 @@
 
 package main
 
-import "fmt"
+import (
+	"api-postgres/internal/db"
+	"context"
+	"fmt"
+)
 
 // responsible for instantiation and app startup
 func Run() error {
-	fmt.Println("starting app")
+	fmt.Println("connecting db...")
+
+	db, err := db.NewDatabase()
+	if err != nil {
+		fmt.Println("failed to connect db")
+		return err
+	}
+
+	if err := db.Ping(context.Background()); err != nil {
+		return err
+	}
+
+	fmt.Println("db connected...")
+
 	return nil
 }
 
