@@ -1,5 +1,5 @@
 # --------- 1st step: does all steps and tools to compile needed app
-FROM golang:1.16 AS builder
+FROM golang:1.19 AS builder
 
 RUN mkdir /app
 # add all content of curr dir
