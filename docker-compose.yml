@@ -41,7 +41,7 @@ services:
 volumes:
   database_postgres:
 
-# network to services communicate across
+# network to services communicate
 networks:
   fullstack:
     driver: bridge

@@ -29,3 +29,7 @@ can now start the database server using:
 `go install github.com/go-task/task/v3/cmd/task@latest`
 make a  `Taskfile.yml` file
 
+### db package
+- to connect db
+- perform some sqls to save, create ...
+
