@@ -9,5 +9,23 @@ observability (comment id, trace id, ...):
 
 ### dockerize app
 - create Dockerfile
-- `docker build -t go-api .`
+- `docker build -t go-api-pg .`
+
+### compose
+- new file `docker-compose.yml`
+
+`docker compose version`
+Docker Compose version v2.15.1
+
+`docker-compose up`
+
+can now start the database server using:
+`pg_ctl -D /var/lib/postgresql/data -l logfile start`
+
+
+### taskfiles [instead of make]
+[github](https://github.com/go-task/task/blob/master/Taskfile.yml)
+[site](https://taskfile.dev/)
+`go install github.com/go-task/task/v3/cmd/task@latest`
+make a  `Taskfile.yml` file
 
