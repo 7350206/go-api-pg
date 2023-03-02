@@ -47,6 +47,10 @@ func NewService(store Store) *Service {
 func (s *Service) GetComment(ctx context.Context, id string) (Comment, error) {
 	fmt.Println("getting a comment")
 
+	// context explain, (ctx, key, value)
+	// ctx = context.WithValue(ctx, "request_id", "unique-string")
+	// fmt.Println(ctx.Value("request_id")) // unique-string
+
 	// reach out to repo layer and retrieve a comment from db
 	// + dont need to know how it'll be done, just need to inplem Store interface
 	// + easy unit testing by simply mock Store interface without actually talk to db
