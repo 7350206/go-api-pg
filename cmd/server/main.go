@@ -4,7 +4,9 @@
 package main
 
 import (
+	"api-postgres/internal/comment"
 	"api-postgres/internal/db"
+	"context"
 	"fmt"
 )
 
@@ -23,11 +25,14 @@ func Run() error {
 		return err
 	}
 
-	// if err := db.Ping(context.Background()); err != nil {
-	// 	return err
-	// }
-
 	fmt.Println("db connected...")
+
+	// test
+	cmtService := comment.NewService(db)
+	fmt.Println(cmtService.GetComment(
+		context.Background(),
+		"9a31bf83-28dc-4b8d-bf70-7d347a24ff2e",
+	))
 
 	return nil
 }
