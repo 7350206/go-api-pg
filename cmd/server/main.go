@@ -5,7 +5,6 @@ package main
 
 import (
 	"api-postgres/internal/db"
-	"context"
 	"fmt"
 )
 
@@ -19,9 +18,14 @@ func Run() error {
 		return err
 	}
 
-	if err := db.Ping(context.Background()); err != nil {
+	if err := db.MigrateDB(); err != nil {
+		fmt.Println("failed to migrate db")
 		return err
 	}
+
+	// if err := db.Ping(context.Background()); err != nil {
+	// 	return err
+	// }
 
 	fmt.Println("db connected...")
 
