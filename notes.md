@@ -34,5 +34,18 @@ make a  `Taskfile.yml` file
 - perform some sqls to save, create ...
 
 ### migrate db whet app starts up
-- create `mimigrate.go` in db package
+- create `migrate.go` in db package
+
+after:
+`docker ps` see hash
+`docker exec -it hash bash`
+`psql -U postgres`
+`\dt` - tables
+`\d+` 
+`\q` 
+
+
+
+gorm-v1
+`go get -u github.com/jinzhu/gorm`
 
