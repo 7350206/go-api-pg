@@ -33,3 +33,6 @@ make a  `Taskfile.yml` file
 - to connect db
 - perform some sqls to save, create ...
 
+### migrate db whet app starts up
+- create `mimigrate.go` in db package
+
