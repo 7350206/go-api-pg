@@ -41,7 +41,7 @@ after:
 `docker exec -it hash bash`
 `psql -U postgres`
 `\dt` - tables
-`\d+` 
+`\d+ comments` 
 `\q` 
 
 
