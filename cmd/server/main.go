@@ -27,12 +27,24 @@ func Run() error {
 
 	fmt.Println("db connected...")
 
-	// test
 	cmtService := comment.NewService(db)
+
+	// get test
 	fmt.Println(cmtService.GetComment(
 		context.Background(),
 		"9a31bf83-28dc-4b8d-bf70-7d347a24ff2e",
 	))
+
+	// post test, need to be in comment service
+	cmtService.PostComment(
+		context.Background(),
+		comment.Comment{
+			ID:     "9a31bf83-28dc-4b8d-bf70-7d347a24ff2e",
+			Slug:   "manual post test",
+			Author: "manual author",
+			Body:   "manual body",
+		},
+	)
 
 	return nil
 }
